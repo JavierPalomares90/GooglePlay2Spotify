@@ -13,7 +13,7 @@ GPM_KEY_FILE="gpm_credentials.key"
 SPOTIFY_CLIENT_ID=''
 SPOTIFY_SECRET=''
 SPOTIFY_USERNAME=''
-SPOTIFY_REDIRECT_URI=''
+SPOTIFY_REDIRECT_URI='http://localhost/'
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(lineno)d -- %(message)s")
 
@@ -39,7 +39,10 @@ def get_gpm_lib_generator(gpm_client):
     return library_generator
 
 def upload_lib_to_spotify(gpm_lib,spotify_client):
-    pass
+    for track in gpm_lib:
+        artist = track['artist']
+        title = track['title']
+
 
 def main():
     logging.info("Authenticating to gpm")
@@ -47,13 +50,13 @@ def main():
     logging.info("Authenticating to spotify")
     # scope for modifying the user's library
     scope='user-library-modify'
-    spotify_client = get_spotify_client(SPOTIFY_USERNAME,scope,SPOTIFY_SECRET,SPOTIFY_REDIRECT_URI)
+    spotify_client = get_spotify_client(SPOTIFY_USERNAME,scope,SPOTIFY_CLIENT_ID,SPOTIFY_SECRET,SPOTIFY_REDIRECT_URI)
     logging.info("Getting gpm lib")
     gpm_library_iter = get_gpm_lib_generator(gpm_client)
     logging.info("Uploading library to spotify")
     for lib in gpm_library_iter:
         logging.info("uploading next {} songs".format(len(lib)))
-        upload_lib_to_spotify(lib)
+        upload_lib_to_spotify(lib,spotify_client)
 
 
 
