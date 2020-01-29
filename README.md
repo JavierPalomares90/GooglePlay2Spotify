@@ -7,9 +7,24 @@ This python script does 1 thing at the moment: take all the songs from you Music
 
 ## Step 1: Get Spotify Client Keys and ID
 We need to get Spotify keys so that the script can save music to your library.
-Follow 
+Go to the [Spotify developer page](https://developer.spotify.com/dashboard/), login, and create a client ID. You'll be asked for an app name and description. Give it enough info so that you can identify it. You'll also be asked for a redirect URL. Give it as `http://localhost/` 
 
+Once that is done, you'll see your app's dashboard along with a client ID and client secret. Copy these into `SPOTIFY_CLIENT_ID` and 
+`SPOTIFY_SECRET` in `main.py`
+```
+# Spotify keys
+# TODO: Set client keys and ids
+SPOTIFY_CLIENT_ID=''
+SPOTIFY_SECRET=''
+```
+
+you'll also need your Spotify user id. You will find that under your [Account overview](https://www.spotify.com/us/account/overview/).
+Copy it into `SPOTIFY_USERNAME` also in `main.py`
+```
+SPOTIFY_USERNAME=''
+```
 ## Step 2: Login to your Google account
+
 
 ## Step 3: Install requirements
 
