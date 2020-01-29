@@ -35,3 +35,23 @@ pip3 install -r requirements.txt
 ```
 from the base directory to install the required python3 modules
 ## Step 4: Execute
+
+Execute the script with 
+```python3 main.py```
+the first time you execute, your terminal will prompt you to authenticate to GPM via oauth with something similar:
+
+```$ python3 main.py
+INFO:48 -- Authenticating to gpm
+INFO:80 -- initialized
+INFO:23 -- Logging you in via oauth
+
+Visit the following url:
+ https://accounts.google.com/o/oauth2/v2/auth?client_id=228293309116.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3b&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fskyjam&access_type=offline&response_type=code
+
+Opening your browser to it now... done.
+If you don't see your browser, you can just copy and paste the url.
+
+Follow the prompts, then paste the auth code here and hit enter:
+```
+Follow the prompts, paste in the auth code, and the script will begin fetching your GPM library and adding it to your Spotify one.
+Enjoy Spotify and happy listening! 
