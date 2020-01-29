@@ -5,7 +5,7 @@ Google also let users know that their music library would eventually be migrated
 
 This python script does 1 thing at the moment: take all the songs from you Music Library in GPM, and add them as saved songs in Spotify. Word of caution though- if you have a very large library as I did, you'll find that Spotify actually has a limit of 10,000 saved songs (Super lame!). Eventually, I will add support for migrating playlists from GPM to Spotify
 
-## Step 1: Get Spotify Client Keys and ID
+## Step 1: Get Spotify Client ID and Secret
 We need to get Spotify keys so that the script can save music to your library.
 Go to the [Spotify developer page](https://developer.spotify.com/dashboard/), login, and create a client ID. You'll be asked for an app name and description. Give it enough info so that you can identify it. You'll also be asked for a redirect URL. Give it as `http://localhost/` 
 
@@ -25,7 +25,13 @@ SPOTIFY_USERNAME=''
 ```
 ## Step 2: Login to your Google account
 
+Login to your Google account on your browser of choice. 
 
 ## Step 3: Install requirements
 
+with python 3 and pip3 installed, execute 
+```
+pip3 install -r requirements.txt
+```
+from the base directory to install the required python3 modules
 ## Step 4: Execute
